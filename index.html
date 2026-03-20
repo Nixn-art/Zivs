@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,9 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
   <style>
-    /* ---------- GLOBAL RESET & VARIABLES ---------- */
+       /* ---------- GLOBAL RESET & VARIABLES ---------- */
     * {
       margin: 0;
       padding: 0;
@@ -19,7 +17,8 @@
     :root {
       --navy: #355B8D;
       --navy-light: #1A3150;
-      --navy-gradient: linear-gradient(135deg, #BBBEC1 0%, #5288C5 100%);
+      --navy-gradient: linear-gradient(140deg, #075B97 0%, #103259 100%);
+      --navy-gradientt: linear-gradient(140deg, #C8E8FF 0%, #64ACFF 100%);
       --gold: #C9A227;
       --gold-light: #E5B53C;
       --white: #FFFFFF;
@@ -52,7 +51,7 @@
     }
     /* ---------- ENHANCED NAVIGATION ---------- */
     nav {
-      background: var(--navy-gradient);
+      background: var(--navy-gradientt);
       box-shadow: 0 8px 25px rgba(11,31,58,0.2);
       padding: 12px 0;
       position: sticky;
@@ -71,7 +70,7 @@
     }
     .logo img {
       height: 100px;
-      width: 100px;
+      width: auto;
       display: block;
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
     }
@@ -198,7 +197,7 @@
       border-bottom: 4px solid var(--gold);
     }
     
-    /* Gallery Section */
+    /* Gallery Section – now includes vintage AGM/EGM images (placeholders) */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -262,10 +261,7 @@
     .benefits-list { list-style: disc; padding-left: 20px; margin: 20px 0; }
     .benefits-list li { margin-bottom: 12px; }
     
-    .job-mini-card {
-      background: white; padding: 24px; border-radius: var(--radius-sm); border-left: 5px solid var(--gold);
-      margin-bottom: 16px; box-shadow: var(--shadow-sm);
-    }
+    /* No employment section – removed as requested */
     
     .pdf-download-card {
       background: white;
@@ -682,7 +678,103 @@
       }
       .gallery-grid { grid-template-columns: 1fr; }
     }
+    /* Additional styles for advert */
+    .homepage-advert {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      margin: 20px auto 0;
+      max-width: 1200px;
+      overflow: hidden;
+      text-align: center;
+      border: 2px solid var(--gold);
+    }
+    .homepage-advert img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .news-blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .news-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s;
+      border: 1px solid var(--gray-border);
+    }
+    .news-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px rgba(11,31,58,0.1);
+      border-color: var(--gold);
+    }
+    .news-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .news-content {
+      padding: 24px;
+    }
+    .news-date {
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .news-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--navy);
+    }
+    .news-excerpt {
+      color: var(--text-soft);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .read-more {
+      color: var(--gold);
+      font-weight: 600;
+      text-decoration: none;
+      display: none;
+      align-items: center;
+      gap: 6px;
+    }
+    .read-more:hover {
+      color: var(--navy);
+    }
+    .cpd-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s;
+      border-left: 5px solid var(--gold);
+    }
+    .cpd-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .cpd-date {
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .cpd-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
   </style>
+    
+  </style>
+  
 </head>
 <body>
   <!-- ENHANCED STICKY NAVIGATION WITH DROPDOWNS -->
@@ -701,26 +793,25 @@
         <li>
           <a href="#"><i class="fas fa-newspaper"></i> Press <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
-            <a href="#" onclick="downloadPublicPDF('Press_Statement_Jan2025.pdf', '/press/jan2025.pdf')"><i class="fas fa-file-pdf"></i> January 2025</a>
+            <a href="#" onclick="downloadPublicPDF('Press_Statement_Jan2025.pdf', '/press/jan2025.pdf')"><i class="fas fa-file-pdf"></i> march 2026</a>
             <a href="#" onclick="downloadPublicPDF('Press_Statement_Dec2024.pdf', '/press/dec2024.pdf')"><i class="fas fa-file-pdf"></i> December 2024</a>
             <a href="#" onclick="downloadPublicPDF('Press_Statement_Nov2024.pdf', '/press/nov2024.pdf')"><i class="fas fa-file-pdf"></i> November 2024</a>
             <a href="#" onclick="downloadPublicPDF('Media_Kit_2025.pdf', '/press/mediakit.pdf')"><i class="fas fa-folder"></i> Media Kit</a>
           </div>
         </li>
         
-        <!-- PUBLICATIONS DROPDOWN -->
+        <!-- PUBLICATIONS DROPDOWN – added Government Gazette Notice. 2025.pdf -->
         <li>
           <a href="#"><i class="fas fa-book-open"></i> Publications <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
-            <a href="#" onclick="downloadPublicPDF('Annual_Report_2024.pdf', '/pubs/annual2024.pdf')"><i class="fas fa-chart-bar"></i> Annual Report 2024</a>
-            <a href="#" onclick="downloadPublicPDF('ZIVS_Journal_Q1_2025.pdf', '/pubs/journal.pdf')"><i class="fas fa-book"></i> Journal Q1 2025</a>
-            <a href="#" onclick="downloadPublicPDF('Valuation_Standards_2025.pdf', '/pubs/standards.pdf')"><i class="fas fa-scale-balanced"></i> Valuation Standards</a>
-            <a href="#" onclick="downloadPublicPDF('CPD_Handbook.pdf', '/pubs/cpd.pdf')"><i class="fas fa-graduation-cap"></i> CPD Handbook</a>
-            <a href="#" onclick="downloadPublicPDF('Newsletter_March2025.pdf', '/pubs/newsletter.pdf')"><i class="fas fa-envelope-open-text"></i> Newsletter March 2025</a>
+            
+            <!-- NEW: Government Gazette Notice. 2025.pdf -->
+            <a href="/pdfs/Government Gazette Notice. 2025.pdf" onclick="downloadPublicPDF('Government Gazette Notice. 2025.pdf', '/pdfs/Government Gazette Notice. 2025.pdf')"><i class="fas fa-gavel"></i> Government Gazette 2025</a>
           </div>
         </li>
         
-        <li><a href="#employment" class="smooth"><i class="fas fa-briefcase"></i> Careers</a></li>
+        <!-- EMPLOYMENT OPPORTUNITIES REMOVED as requested -->
+        
         <li><a href="#gallery" class="smooth"><i class="fas fa-images"></i> Gallery</a></li>
         <li><a href="#contact" class="smooth"><i class="fas fa-phone-alt"></i> Contact</a></li>
         <li><a href="#faq" class="smooth"><i class="fas fa-question-circle"></i> FAQ</a></li>
@@ -825,7 +916,7 @@
         <div class="member-card">
           <h3><i class="fas fa-calendar-alt"></i> Upcoming Events</h3>
           <ul>
-            <li><i class="fas fa-calendar-check"></i> AGM 2025 - March 15, 2025</li>
+            <li><i class="fas fa-calendar-check"></i> AGM 2026 - March 27, 2026 (covers all quarters of 2026)</li>
             <li><i class="fas fa-calendar-check"></i> CPD Workshop - April 10, 2025</li>
             <li><i class="fas fa-calendar-check"></i> Ethics Seminar - May 5, 2025</li>
             <li><i class="fas fa-calendar-check"></i> Networking Event - June 20, 2025</li>
@@ -864,7 +955,7 @@
           <div style="display: flex; flex-wrap: wrap; gap: 16px;">
             <button class="btn btn-primary" id="heroApplyBtn" style="background: var(--gold); color: var(--navy);">Apply for Membership</button>
             <button class="btn btn-gold" id="downloadMainPdfBtn"><i class="fas fa-file-pdf"></i> Download Forms</button>
-            <a href="#employment" class="btn btn-primary smooth">Employment Opportunities</a>
+            <!-- Employment button removed -->
           </div>
         </div>
         <div style="flex:0 0 200px; text-align: center;">
@@ -872,6 +963,13 @@
         </div>
       </div>
     </section>
+
+    <!-- NEW ADVERT IMAGE SECTION - Immediately visible above the fold -->
+    <div class="container" style="margin-top: 30px;">
+      <div class="homepage-advert">
+        <img src="/IMG-20260309-WA0001.jpg">
+      </div>
+    </div>
 
     <!-- ABOUT ZIVS -->
     <section id="about" class="section bg-light">
@@ -961,28 +1059,122 @@
       </div>
     </section>
 
-    <!-- NEW GALLERY SECTION -->
+    <!-- NEW CPD SECTION - Updated with provided dates and topics -->
+    <section id="cpd" class="section bg-light">
+      <div class="container">
+        <h2>Continuing Professional Development (CPD)</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 32px;">Stay updated with the latest industry knowledge through our accredited CPD programs.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px;">
+          <div class="cpd-card">
+            <div class="cpd-date">📅 February 28, 2025</div>
+            <div class="cpd-title">Advanced Property Valuation Techniques</div>
+            <p>Master modern valuation methods including DCF, comparative analysis, and investment valuations for complex properties.</p>
+          </div>
+          <div class="cpd-card">
+            <div class="cpd-date">📅 March 15, 2025</div>
+            <div class="cpd-title">Property Tax Reform & Compliance</div>
+            <p>Understanding the new property tax regulations, valuation for rating purposes, and compliance requirements for valuers.</p>
+          </div>
+          <div class="cpd-card">
+            <div class="cpd-date">📅 April 12, 2025</div>
+            <div class="cpd-title">Sustainable Facilities Management</div>
+            <p>Green building practices, energy efficiency in property management, and sustainable facilities operations.</p>
+          </div>
+          <div class="cpd-card">
+            <div class="cpd-date">📅 May 17, 2025</div>
+            <div class="cpd-title">Ethics & Professional Conduct</div>
+            <p>Case studies in ethical dilemmas, disciplinary procedures, and maintaining professional integrity in valuation practice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW MAGAZINE / NEWS SECTION - Blog/news entries -->
+    <section id="news" class="section">
+      <div class="container">
+        <h2>ZIVS News & Updates</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 20px;">Stay informed with the latest developments in the valuation surveying profession.</p>
+        <div class="news-blog-grid">
+          <div class="news-card">
+            <img src="/news (6).jpeg" alt="ZIVS Council Meeting">
+            <div class="news-content">
+              <div class="news-date">March 5, 2025</div>
+              <div class="news-title">ZIVS Council Approves New CPD Framework</div>
+              <div class="news-excerpt">The Institute's governing council has approved an enhanced Continuing Professional Development framework to ensure members maintain the highest standards of competency.</div>
+              <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="news-card">
+            <img src="/news (5).jpeg" alt="Valuation Workshop">
+            <div class="news-content">
+              <div class="news-date">February 20, 2025</div>
+              <div class="news-title">Successful Property Valuation Workshop Held in Lusaka</div>
+              <div class="news-excerpt">Over 150 valuation professionals gathered for the annual property valuation workshop focusing on emerging market trends and digital transformation in the sector.</div>
+              <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="news-card">
+            <img src="/news (4).jpeg" alt="New Members">
+            <div class="news-content">
+              <div class="news-date">February 10, 2025</div>
+              <div class="news-title">ZIVS Welcomes 45 New Members</div>
+              <div class="news-excerpt">Forty-five new professionals were inducted into the Institute after successfully meeting all registration requirements and passing the professional assessment.</div>
+              <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="news-card">
+            <img src="/news (3).jpeg" alt="Government Meeting">
+            <div class="news-content">
+              <div class="news-date">January 25, 2025</div>
+              <div class="news-title">ZIVS Engages Government on Land Policy Reforms</div>
+              <div class="news-excerpt">The Institute presented key recommendations to the Ministry of Lands on improving land administration systems and valuation standards nationwide.</div>
+              <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="news-card">
+            <img src="/news (2).jpeg" alt="Conference">
+            <div class="news-content">
+              <div class="news-date">January 15, 2025</div>
+              <div class="news-title">Zambia to Host Regional Valuation Conference 2025</div>
+              <div class="news-excerpt">ZIVS announced it will host the SADC Valuation and Property Conference in August 2025, bringing together professionals from across the region.</div>
+              <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="news-card">
+            <img src="/news (1).jpeg" alt="Digital Platform">
+            <div class="news-content">
+              <div class="news-date">January 5, 2025</div>
+              <div class="news-title">ZIVS Launches Digital Member Portal</div>
+              <div class="news-excerpt">The Institute's new digital platform provides members with easy access to CPD records, renewal services, and professional resources 24/7.</div>
+              <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW GALLERY SECTION – includes vintage AGM/EGM images (placeholders) -->
     <section id="gallery" class="section">
       <div class="container">
-        <h2><i class="fas fa-images" style="color: var(--gold); margin-right: 12px;"></i> ZIVS </h2>
-        <p style="font-size: 1.2rem; margin-bottom: 20px;">Highlights from our events, conferences, and professional engagements.</p>
+        <h2><i class="fas fa-images" style="color: var(--gold); margin-right: 12px;"></i> ZIVS Through the Years</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 20px;">AGM and EGM moments that shaped our institution.</p>
         
         <div class="gallery-grid">
           <div class="gallery-item">
-            <img src="/images (6).jpeg" alt="AGM 2024">
-            <div class="gallery-caption">AGM 2024 - Electing New Council</div>
+            <img src="/gallery (1).jpg" alt="AGM 2005 - historic">
+            <div class="gallery-caption">AGM 2005 – Council elections</div>
           </div>
           <div class="gallery-item">
-            <img src="/images (5).jpeg" alt="CPD Workshop">
-            <div class="gallery-caption">CPD Workshop on Modern Valuation</div>
+            <img src="/gallery (3).jpg" alt="EGM 2010 - special resolution">
+            <div class="gallery-caption"> ZIVS Council pays a courtesy call at Chairperson-Local Government Service Commission Honourable Luckson Kazabu</div>
           </div>
           <div class="gallery-item">
-            <img src="/images (4).jpeg" alt="Networking Event">
-            <div class="gallery-caption">Annual Networking Gala 2025</div>
+            <img src="/gallery (2).jpg" alt="AGM 2015 - new members">
+            <div class="gallery-caption">AGM  – Admission of new members</div>
           </div>
           <div class="gallery-item">
-            <img src="/images (2).jpeg" alt="Regulatory Meeting">
-            <div class="gallery-caption">Stakeholder Engagement Forum</div>
+            <img src="/gallery (4).jpg" alt="EGM 2020 - strategic plan">
+            <div class="gallery-caption"> – Strategic planning session</div>
           </div>
         </div>
       </div>
@@ -1144,36 +1336,8 @@
       </div>
     </div>
 
-    <!-- EMPLOYMENT SECTION -->
-    <section id="employment" class="section">
-      <div class="container">
-        <h2>Employment Opportunities</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 40px;">ZIVS invites applications from highly qualified, registered professionals.</p>
-        <div style="display: grid; gap: 24px;">
-          <div class="job-mini-card"><h3>Registrar / Chief Executive Officer</h3><p><strong>Purpose:</strong> Lead ZIVS secretariat, advise Council.</p><button class="btn-outline applyJobBtn" data-job="Registrar / CEO">Apply Now</button></div>
-          <div class="job-mini-card"><h3>Accounts & Administrative Officer</h3><p><strong>Purpose:</strong> Manage finance, payroll, administration.</p><button class="btn-outline applyJobBtn" data-job="Accounts & Administrative Officer">Apply Now</button></div>
-          <div class="job-mini-card"><h3>Compliance Officer</h3><p><strong>Purpose:</strong> Monitor ethics, inspections, conduct.</p><button class="btn-outline applyJobBtn" data-job="Compliance Officer">Apply Now</button></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- JOB MODAL -->
-    <div id="jobModal" class="modal">
-      <div class="modal-content">
-        <span class="close-modal" id="closeJobModal">&times;</span>
-        <h3>Apply for Position</h3>
-        <form id="jobApplicationForm">
-          <div class="form-group"><label>Full Name *</label><input type="text" id="jobName" required></div>
-          <div class="form-group"><label>Email *</label><input type="email" id="jobEmail" required></div>
-          <div class="form-group"><label>Phone</label><input type="text" id="jobPhone"></div>
-          <div class="form-group"><label>Position</label><select id="jobPosition"><option>Registrar / CEO</option><option>Accounts & Administrative Officer</option><option>Compliance Officer</option></select></div>
-          <div class="form-group"><label>Cover Letter</label><textarea rows="4" id="coverLetter"></textarea></div>
-          <div class="form-group"><label>CV (simulated)</label><input type="file" id="cvFile"></div>
-          <button type="submit" class="btn-submit">Submit (mailto)</button>
-        </form>
-      </div>
-    </div>
-
+    <!-- EMPLOYMENT SECTION COMPLETELY REMOVED as requested -->
+    
     <!-- CONTACT + MAP -->
     <section id="contact" class="section bg-light">
       <div class="container">
@@ -1182,7 +1346,10 @@
           <div>
             <p style="margin-bottom: 16px;"><i class="fas fa-location-dot" style="color: var(--gold);"></i> <strong>Stand No. 4454 & 7048, Third Floor Suite 321 & 322, Provident House, Cairo Road, Lusaka</strong></p>
             <p style="margin-bottom: 8px;"><i class="fas fa-phone" style="color: var(--gold);"></i> +260772446435</p>
-            <p style="margin-bottom: 8px;"><i class="fas fa-envelope" style="color: var(--gold);"></i> president@zivs.org.zm | finance@zivs.org.zm</p>
+            <p style="margin-bottom: 8px;"><i class="fas fa-envelope" style="color: var(--gold);"></i>registrar@zivs.org.zm |finance@zivs.org.zm
+              |registration@zivs.org.zm
+              |compliance@zivs.org.zm
+              |president@zivs.org.zm</p>
             <div class="map-container">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.3031345714966!2d28.32137831488289!3d-15.416868189274565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1940f8e1b3b1b1b1%3A0x123456789abcdef!2sProvident%20House%2C%20Cairo%20Rd%2C%20Lusaka!5e0!3m2!1sen!2szm!4v1612345678901!5m2!1sen!2szm" loading="lazy"></iframe>
             </div>
@@ -1210,14 +1377,28 @@
   </main>
 
   <!-- FOOTER -->
-  <footer>
+<footer>
     <div class="container">
       <div class="footer-grid">
         <div>
           <img src="/image-removebg-preview.png" style="height: 45px; margin-bottom: 16px;">
           <p style="color: rgba(255,255,255,0.8);">Regulating valuation surveyors since 2023.</p>
+          <div style="display: flex; gap: 16px; margin-top: 16px;">
+            <a href="https://facebook.com/zambiainstituteofvaluationsurveyors" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.99h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/></svg>
+            </a>
+            <a href="https://youtube.com/@ZambiaInstituteofValuationSurv" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://linkedin.com/company/zambiainstituteofvaluationsurveyors" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://x.com/zambiainstituteofvaluationsurveyors" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="footer-links"><h4 style="color: white;">Quick links</h4><a href="#about">About</a><a href="#membership">Membership</a><a href="#employment">Careers</a><a href="#faq">FAQ</a></div>
+        <div class="footer-links"><h4 style="color: white;">Quick links</h4><a href="#about">About</a><a href="#membership">Membership</a><a href="#faq">FAQ</a></div>
         <div class="footer-links"><h4 style="color: white;">Legal</h4><a href="#">Act No. 9 of 2023</a><a href="#">Privacy</a><a href="#">Terms</a></div>
         <div><p style="color: white;">© 2025 ZIVS. All rights reserved.</p></div>
       </div>
@@ -1230,9 +1411,10 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 
-  <!-- Consolidated JavaScript -->
-  <script>
-    // Firebase Config
+  <!-- Consolidated JavaScript (same as previous with employment sections removed) -->
+   <script>
+   
+       // Firebase Config
     const firebaseConfig = {
       apiKey: "AIzaSyB7LzE4WpLWbkIM7w9jN3TYR99npzH_q5I",
       authDomain: "zivs-f1b9f.firebaseapp.com",
@@ -1242,35 +1424,26 @@
       appId: "1:194868221714:web:80062d4d6103206b8985cb"
     };
     
-    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
     const db = firebase.firestore();
     window.auth = auth;
     window.db = db;
 
-    // Auth State Observer
     auth.onAuthStateChanged((user) => {
       const membersArea = document.getElementById('membersArea');
       const authBadgeText = document.getElementById('authBadgeText');
       const authBadge = document.getElementById('authBadge');
       const memberName = document.getElementById('memberName');
-      
       if (user) {
         membersArea?.classList.add('visible');
         authBadgeText.textContent = 'Members Area';
         authBadge.style.background = 'var(--navy)';
         authBadge.style.color = 'var(--gold)';
-        
         db.collection('users').doc(user.uid).get().then((doc) => {
-          if (doc.exists) {
-            memberName.textContent = doc.data().fullName || user.email.split('@')[0];
-          } else {
-            memberName.textContent = user.email.split('@')[0];
-          }
-        }).catch(() => {
-          memberName.textContent = user.email.split('@')[0];
-        });
+          if (doc.exists) memberName.textContent = doc.data().fullName || user.email.split('@')[0];
+          else memberName.textContent = user.email.split('@')[0];
+        }).catch(() => memberName.textContent = user.email.split('@')[0]);
       } else {
         membersArea?.classList.remove('visible');
         authBadgeText.textContent = 'Member Login';
@@ -1279,55 +1452,28 @@
       }
     });
 
-    // Tab switching function
     window.switchTab = function(tabName) {
-      const tabs = document.querySelectorAll('.auth-tab');
-      const forms = document.querySelectorAll('.auth-form');
-      
-      tabs.forEach(tab => {
-        if (tab.dataset.tab === tabName) {
-          tab.classList.add('active');
-        } else {
-          tab.classList.remove('active');
-        }
-      });
-      
-      forms.forEach(form => {
-        if (form.id === tabName + 'Form') {
-          form.classList.add('active');
-        } else {
-          form.classList.remove('active');
-        }
-      });
+      document.querySelectorAll('.auth-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tabName));
+      document.querySelectorAll('.auth-form').forEach(f => f.classList.toggle('active', f.id === tabName + 'Form'));
     };
 
-    // Auth tab click handlers
     document.querySelectorAll('.auth-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        switchTab(tab.dataset.tab);
-      });
+      tab.addEventListener('click', () => switchTab(tab.dataset.tab));
     });
 
-    // Modal controls
     const authModal = document.getElementById('authModal');
     const authBadge = document.getElementById('authBadge');
     const closeAuth = document.getElementById('closeAuth');
 
     authBadge.addEventListener('click', () => {
-      if (auth.currentUser) {
-        document.getElementById('membersArea').scrollIntoView({ behavior: 'smooth' });
-      } else {
-        authModal.classList.add('active');
-      }
+      if (auth.currentUser) document.getElementById('membersArea').scrollIntoView({ behavior: 'smooth' });
+      else authModal.classList.add('active');
     });
 
     document.getElementById('memberNavLink')?.addEventListener('click', (e) => {
       e.preventDefault();
-      if (auth.currentUser) {
-        document.getElementById('membersArea').scrollIntoView({ behavior: 'smooth' });
-      } else {
-        authModal.classList.add('active');
-      }
+      if (auth.currentUser) document.getElementById('membersArea').scrollIntoView({ behavior: 'smooth' });
+      else authModal.classList.add('active');
     });
 
     closeAuth.addEventListener('click', () => {
@@ -1339,346 +1485,105 @@
       document.getElementById('registerSuccess').style.display = 'none';
     });
 
-    window.addEventListener('click', (e) => {
-      if (e.target === authModal) {
-        authModal.classList.remove('active');
-      }
-    });
+    window.addEventListener('click', (e) => { if (e.target === authModal) authModal.classList.remove('active'); });
 
-    // Login Form Handler
     document.getElementById('loginFormElement').addEventListener('submit', (e) => {
       e.preventDefault();
-      
       const email = document.getElementById('loginEmail').value;
       const password = document.getElementById('loginPassword').value;
       const errorDiv = document.getElementById('loginError');
-      
       errorDiv.style.display = 'none';
-      errorDiv.textContent = '';
-      
       auth.signInWithEmailAndPassword(email, password)
-        .then(() => {
-          authModal.classList.remove('active');
-          document.getElementById('loginFormElement').reset();
-          alert('Login successful! Welcome to the members area.');
-        })
-        .catch((error) => {
-          errorDiv.textContent = getErrorMessage(error.code);
-          errorDiv.style.display = 'block';
-        });
+        .then(() => { authModal.classList.remove('active'); alert('Login successful!'); })
+        .catch((error) => { errorDiv.textContent = error.message; errorDiv.style.display = 'block'; });
     });
 
-    // Register Form Handler
     document.getElementById('registerFormElement').addEventListener('submit', (e) => {
       e.preventDefault();
-      
       const fullName = document.getElementById('regFullName').value;
       const email = document.getElementById('regEmail').value;
       const password = document.getElementById('regPassword').value;
-      const confirmPassword = document.getElementById('regConfirmPassword').value;
+      const confirm = document.getElementById('regConfirmPassword').value;
       const membershipType = document.getElementById('regMembershipType').value;
       const errorDiv = document.getElementById('registerError');
       const successDiv = document.getElementById('registerSuccess');
-      
       errorDiv.style.display = 'none';
-      successDiv.style.display = 'none';
-      errorDiv.textContent = '';
-      successDiv.textContent = '';
-      
-      if (password !== confirmPassword) {
-        errorDiv.textContent = 'Passwords do not match';
-        errorDiv.style.display = 'block';
-        return;
-      }
-      
-      if (!membershipType) {
-        errorDiv.textContent = 'Please select a membership type';
-        errorDiv.style.display = 'block';
-        return;
-      }
-      
+      if (password !== confirm) { errorDiv.textContent = 'Passwords do not match'; errorDiv.style.display = 'block'; return; }
+      if (!membershipType) { errorDiv.textContent = 'Select membership type'; errorDiv.style.display = 'block'; return; }
       auth.createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
-          const user = userCredential.user;
-          
-          return db.collection('users').doc(user.uid).set({
-            fullName: fullName,
-            email: email,
-            membershipType: membershipType,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-            uid: user.uid
-          }).then(() => {
-            user.sendEmailVerification().catch(err => console.log('Email verification error:', err));
-            
-            successDiv.textContent = 'Registration successful! Please log in!';
-            successDiv.style.display = 'block';
-            
-            document.getElementById('registerFormElement').reset();
-            
-            setTimeout(() => {
-              switchTab('login');
-            }, 3000);
-          });
+          return db.collection('users').doc(userCredential.user.uid).set({ fullName, email, membershipType, createdAt: firebase.firestore.FieldValue.serverTimestamp(), uid: userCredential.user.uid })
+            .then(() => { successDiv.textContent = 'Registration successful! Please login.'; successDiv.style.display = 'block'; document.getElementById('registerFormElement').reset(); setTimeout(() => switchTab('login'), 2000); });
         })
-        .catch((error) => {
-          errorDiv.textContent = getErrorMessage(error.code);
-          errorDiv.style.display = 'block';
-        });
+        .catch((error) => { errorDiv.textContent = error.message; errorDiv.style.display = 'block'; });
     });
 
-    // Logout Handler
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-      auth.signOut().then(() => {
-        alert('You have been logged out successfully.');
-      }).catch((error) => {
-        alert('Error logging out: ' + error.message);
-      });
-    });
+    document.getElementById('logoutBtn').addEventListener('click', () => auth.signOut().then(() => alert('Logged out.')));
 
-    // Helper function for error messages
-    function getErrorMessage(errorCode) {
-      switch(errorCode) {
-        case 'auth/email-already-in-use':
-          return 'This email is already registered. Please login instead.';
-        case 'auth/invalid-email':
-          return 'Please enter a valid email address.';
-        case 'auth/user-disabled':
-          return 'This account has been disabled. Please contact support.';
-        case 'auth/user-not-found':
-          return 'No account found with this email. Please register first.';
-        case 'auth/wrong-password':
-          return 'Incorrect password. Please try again.';
-        case 'auth/weak-password':
-          return 'Password should be at least 6 characters.';
-        default:
-          return 'An error occurred. Please try again.';
-      }
-    }
-
-    // Protected download for members
     window.downloadPDF = function(filename, filepath) {
-      if (!auth.currentUser) {
-        alert('Please login to access member-only content.');
-        authModal.classList.add('active');
-        return;
-      }
-      
-      const dummyPDF = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
-      const link = document.createElement('a');
-      link.href = filepath || dummyPDF;
-      link.download = filename || 'document.pdf';
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      if (!auth.currentUser) { alert('Please login to access member content.'); authModal.classList.add('active'); return; }
+      const link = document.createElement('a'); link.href = filepath || 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'; link.download = filename; link.target = '_blank'; link.rel = 'noopener noreferrer'; document.body.appendChild(link); link.click(); document.body.removeChild(link);
     };
 
-    // Public download function
     window.downloadPublicPDF = function(filename, filepath) {
-      const dummyPDF = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
-      const link = document.createElement('a');
-      link.href = filepath || dummyPDF;
-      link.download = filename || 'document.pdf';
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      const link = document.createElement('a'); link.href = filepath || 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'; link.download = filename; link.target = '_blank'; link.rel = 'noopener noreferrer'; document.body.appendChild(link); link.click(); document.body.removeChild(link);
     };
 
-    // Mobile hamburger
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     hamburger?.addEventListener('click', () => navLinks.classList.toggle('active'));
 
-    // Smooth scroll
     document.querySelectorAll('.smooth').forEach(link => {
       link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const id = this.getAttribute('href');
-        if (id?.startsWith('#')) document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
-        if (window.innerWidth < 860) navLinks.classList.remove('active');
+        e.preventDefault(); const id = this.getAttribute('href'); if (id?.startsWith('#')) document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' }); if (window.innerWidth < 860) navLinks.classList.remove('active');
       });
     });
 
-    // Modal triggers
-    document.getElementById('floatApplyBtn')?.addEventListener('click', () => {
-      document.getElementById('membership').scrollIntoView({ behavior: 'smooth' });
-    });
-    
-    document.getElementById('heroApplyBtn')?.addEventListener('click', () => {
-      document.getElementById('membership').scrollIntoView({ behavior: 'smooth' });
-    });
-    
-    document.getElementById('corporateApplyBtn')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.getElementById('corpModal').classList.add('active');
-    });
-    
-    document.getElementById('individualApplyBtn')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.getElementById('individualModal').classList.add('active');
-    });
+    document.getElementById('floatApplyBtn')?.addEventListener('click', () => document.getElementById('membership').scrollIntoView({ behavior: 'smooth' }));
+    document.getElementById('heroApplyBtn')?.addEventListener('click', () => document.getElementById('membership').scrollIntoView({ behavior: 'smooth' }));
+    document.getElementById('corporateApplyBtn')?.addEventListener('click', (e) => { e.preventDefault(); document.getElementById('corpModal').classList.add('active'); });
+    document.getElementById('individualApplyBtn')?.addEventListener('click', (e) => { e.preventDefault(); document.getElementById('individualModal').classList.add('active'); });
 
-    // Close modal buttons
-    document.getElementById('closeCorpModal')?.addEventListener('click', () => {
-      document.getElementById('corpModal').classList.remove('active');
-    });
-    
-    document.getElementById('closeIndividualModal')?.addEventListener('click', () => {
-      document.getElementById('individualModal').classList.remove('active');
-    });
-    
-    document.getElementById('closeJobModal')?.addEventListener('click', () => {
-      document.getElementById('jobModal').classList.remove('active');
-    });
+    document.getElementById('closeCorpModal')?.addEventListener('click', () => document.getElementById('corpModal').classList.remove('active'));
+    document.getElementById('closeIndividualModal')?.addEventListener('click', () => document.getElementById('individualModal').classList.remove('active'));
 
-    // Download buttons
-    document.getElementById('downloadCorporateFormPdfBtn')?.addEventListener('click', () => {
-      downloadPublicPDF('ZIVS_Corporate_Application.pdf', '/pdfs/corporate-application-form.pdf');
-    });
+    document.getElementById('downloadCorporateFormPdfBtn')?.addEventListener('click', () => downloadPublicPDF('ZIVS_Corporate_Application.pdf', '/pdfs/corporate-application-form.pdf'));
+    document.getElementById('downloadIndividualFormPdfBtn')?.addEventListener('click', () => downloadPublicPDF('ZIVS_Individual_Application.pdf', '/pdfs/individual-application-form.pdf'));
+    document.getElementById('downloadMainPdfBtn')?.addEventListener('click', () => downloadPublicPDF('ZIVS_Application_Forms.pdf', '/pdfs/application-forms.pdf'));
+    document.getElementById('downloadRenewalPdfBtn')?.addEventListener('click', () => downloadPublicPDF('ZIVS_Renewal_Form.pdf', '/pdfs/renewal-form.pdf'));
 
-    document.getElementById('downloadIndividualFormPdfBtn')?.addEventListener('click', () => {
-      downloadPublicPDF('ZIVS_Individual_Application.pdf', '/pdfs/individual-application-form.pdf');
-    });
-
-    document.getElementById('downloadMainPdfBtn')?.addEventListener('click', () => {
-      downloadPublicPDF('ZIVS_Application_Forms.pdf', '/pdfs/application-forms.pdf');
-    });
-
-    document.getElementById('downloadRenewalPdfBtn')?.addEventListener('click', () => {
-      downloadPublicPDF('ZIVS_Renewal_Form.pdf', '/pdfs/renewal-form.pdf');
-    });
-
-    // Corporate multi-step
+    // Multi-step
     let currentStep = 1;
     function showStep(step) {
       document.querySelectorAll('.step-form').forEach(el => el.classList.add('hidden'));
-      const stepEl = document.getElementById(`step${step}`);
-      if (stepEl) stepEl.classList.remove('hidden');
+      const stepEl = document.getElementById(`step${step}`); if (stepEl) stepEl.classList.remove('hidden');
       document.querySelectorAll('.step').forEach((el,i) => el.classList.remove('active'));
-      const steps = document.querySelectorAll('.step');
-      if (steps[step-1]) steps[step-1].classList.add('active');
+      const steps = document.querySelectorAll('.step'); if (steps[step-1]) steps[step-1].classList.add('active');
       currentStep = step;
     }
-    
-    document.querySelectorAll('.nextStep').forEach(btn => {
-      btn.addEventListener('click', (e) => { 
-        e.preventDefault(); 
-        let n = btn.dataset.next; 
-        if (n) showStep(parseInt(n)); 
-      });
-    });
-    
-    document.querySelectorAll('.prevStep').forEach(btn => {
-      btn.addEventListener('click', (e) => { 
-        e.preventDefault(); 
-        let p = btn.dataset.prev; 
-        if (p) showStep(parseInt(p)); 
-      });
-    });
+    document.querySelectorAll('.nextStep').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); let n = btn.dataset.next; if (n) showStep(parseInt(n)); }));
+    document.querySelectorAll('.prevStep').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); let p = btn.dataset.prev; if (p) showStep(parseInt(p)); }));
 
-    // Add dynamic rows
     document.getElementById('addBranchBtn')?.addEventListener('click', () => {
-      let div = document.createElement('div'); 
-      div.innerHTML = `<div style="border:1px solid #ddd; padding:16px; margin:12px 0; border-radius:8px;">
-        <input placeholder="Trading name" style="width:100%; margin-bottom:8px; padding:8px;">
-        <input placeholder="Physical address" style="width:100%; margin-bottom:8px; padding:8px;">
-        <input placeholder="Postal address" style="width:100%; margin-bottom:8px; padding:8px;">
-        <input placeholder="Phone" style="width:100%; margin-bottom:8px; padding:8px;">
-        <input placeholder="Email" style="width:100%; padding:8px;"></div>`;
+      let div = document.createElement('div'); div.innerHTML = `<div style="border:1px solid #ddd; padding:16px; margin:12px 0; border-radius:8px;"><input placeholder="Trading name" style="width:100%; margin-bottom:8px; padding:8px;"><input placeholder="Physical address" style="width:100%; margin-bottom:8px; padding:8px;"><input placeholder="Postal address" style="width:100%; margin-bottom:8px; padding:8px;"><input placeholder="Phone" style="width:100%; margin-bottom:8px; padding:8px;"><input placeholder="Email" style="width:100%; padding:8px;"></div>`;
       document.getElementById('branchContainer').appendChild(div);
     });
-    
     document.getElementById('addPrincipalBtn')?.addEventListener('click', () => {
-      let d = document.createElement('div'); 
-      d.innerHTML = `<div style="border:1px solid #ddd; padding:16px; margin:12px 0; border-radius:8px;">
-        <input placeholder="Member Name" style="width:100%; margin-bottom:8px; padding:8px;">
-        <input placeholder="Membership Category" style="width:100%; margin-bottom:8px; padding:8px;">
-        <input placeholder="Job Title" style="width:100%; margin-bottom:8px; padding:8px;">
-        <input placeholder="Status" style="width:100%; margin-bottom:8px; padding:8px;">
-        <input placeholder="Phone" style="width:100%; margin-bottom:8px; padding:8px;">
-        <input placeholder="Email" style="width:100%; padding:8px;"></div>`;
+      let d = document.createElement('div'); d.innerHTML = `<div style="border:1px solid #ddd; padding:16px; margin:12px 0; border-radius:8px;"><input placeholder="Member Name" style="width:100%; margin-bottom:8px; padding:8px;"><input placeholder="Membership Category" style="width:100%; margin-bottom:8px; padding:8px;"><input placeholder="Job Title" style="width:100%; margin-bottom:8px; padding:8px;"><input placeholder="Status" style="width:100%; margin-bottom:8px; padding:8px;"><input placeholder="Phone" style="width:100%; margin-bottom:8px; padding:8px;"><input placeholder="Email" style="width:100%; padding:8px;"></div>`;
       document.getElementById('principalContainer').appendChild(d);
     });
-    
     document.getElementById('addEmployeeBtn')?.addEventListener('click', () => {
-      let d = document.createElement('div'); 
-      d.innerHTML = `<div style="border:1px solid #ddd; padding:16px; margin:12px 0; border-radius:8px;">
-        <input placeholder="Employee Name" style="width:100%; margin-bottom:8px; padding:8px;">
-        <input placeholder="Category" style="width:100%; margin-bottom:8px; padding:8px;">
-        <input placeholder="Job Title" style="width:100%; margin-bottom:8px; padding:8px;">
-        <input placeholder="Status" style="width:100%; margin-bottom:8px; padding:8px;">
-        <input placeholder="Phone" style="width:100%; margin-bottom:8px; padding:8px;">
-        <input placeholder="Email" style="width:100%; padding:8px;"></div>`;
+      let d = document.createElement('div'); d.innerHTML = `<div style="border:1px solid #ddd; padding:16px; margin:12px 0; border-radius:8px;"><input placeholder="Employee Name" style="width:100%; margin-bottom:8px; padding:8px;"><input placeholder="Category" style="width:100%; margin-bottom:8px; padding:8px;"><input placeholder="Job Title" style="width:100%; margin-bottom:8px; padding:8px;"><input placeholder="Status" style="width:100%; margin-bottom:8px; padding:8px;"><input placeholder="Phone" style="width:100%; margin-bottom:8px; padding:8px;"><input placeholder="Email" style="width:100%; padding:8px;"></div>`;
       document.getElementById('employeeContainer').appendChild(d);
     });
 
-    // Save draft
-    document.getElementById('saveDraftBtn')?.addEventListener('click', function(e){
-      e.preventDefault();
-      let draft = { regName: document.getElementById('regName')?.value || '' };
-      localStorage.setItem('zivs_corp_draft', JSON.stringify(draft));
-      document.getElementById('draftMsg').innerText = '✓ Draft saved.';
-    });
+    document.getElementById('saveDraftBtn')?.addEventListener('click', (e) => { e.preventDefault(); localStorage.setItem('zivs_corp_draft', JSON.stringify({ regName: document.getElementById('regName')?.value || '' })); document.getElementById('draftMsg').innerText = '✓ Draft saved.'; });
+    document.getElementById('submitCorporateForm')?.addEventListener('click', (e) => { e.preventDefault(); let name = document.getElementById('declName')?.value || 'Applicant'; window.location.href = `mailto:president@zivs.org.zm?cc=finance@zivs.org.zm&subject=Corporate%20Membership%20Application&body=${encodeURIComponent(`Corporate application from ${name}. Submitted via ZIVS.`)}`; alert('✓ Application opened in mail client.'); document.getElementById('corpModal').classList.remove('active'); });
+    document.getElementById('submitIndividualForm')?.addEventListener('click', (e) => { e.preventDefault(); let name = document.getElementById('individualName')?.value || 'Applicant'; window.location.href = `mailto:president@zivs.org.zm?cc=finance@zivs.org.zm&subject=Individual%20Membership%20Application&body=${encodeURIComponent(`Individual application from ${name}. Submitted via ZIVS.`)}`; alert('✓ Application opened.'); document.getElementById('individualModal').classList.remove('active'); });
+    document.getElementById('saveIndividualDraft')?.addEventListener('click', (e) => { e.preventDefault(); localStorage.setItem('zivs_individual_draft', JSON.stringify({ name: document.getElementById('individualName')?.value || '' })); document.getElementById('individualDraftMsg').innerText = '✓ Draft saved.'; });
 
-    // Submit corporate
-    document.getElementById('submitCorporateForm')?.addEventListener('click', function(e){
-      e.preventDefault();
-      let name = document.getElementById('declName')?.value || 'Applicant';
-      let body = `Corporate application from ${name}. Submitted via ZIVS.`;
-      window.location.href = `mailto:president@zivs.org.zm?cc=finance@zivs.org.zm&subject=Corporate%20Membership%20Application&body=${encodeURIComponent(body)}`;
-      alert('✓ Application opened in mail client.');
-      document.getElementById('corpModal').classList.remove('active');
-    });
+    document.getElementById('contactForm')?.addEventListener('submit', (e) => { e.preventDefault(); let msg = document.getElementById('contactMsg').value; window.location.href = `mailto:president@zivs.org.zm?cc=finance@zivs.org.zm&subject=Contact%20ZIVS&body=${encodeURIComponent(msg)}`; });
 
-    // Submit individual
-    document.getElementById('submitIndividualForm')?.addEventListener('click', function(e){
-      e.preventDefault();
-      let name = document.getElementById('individualName')?.value || 'Applicant';
-      let category = document.getElementById('individualCategory')?.value || 'Professional';
-      let body = `Individual membership application from ${name} for ${category}. Submitted via ZIVS.`;
-      window.location.href = `mailto:president@zivs.org.zm?cc=finance@zivs.org.zm&subject=Individual%20Membership%20Application&body=${encodeURIComponent(body)}`;
-      alert('✓ Application opened in mail client.');
-      document.getElementById('individualModal').classList.remove('active');
-    });
-
-    // Save individual draft
-    document.getElementById('saveIndividualDraft')?.addEventListener('click', function(e){
-      e.preventDefault();
-      let draft = { name: document.getElementById('individualName')?.value || '' };
-      localStorage.setItem('zivs_individual_draft', JSON.stringify(draft));
-      document.getElementById('individualDraftMsg').innerText = '✓ Draft saved.';
-    });
-
-    // Job modal
-    document.querySelectorAll('.applyJobBtn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.getElementById('jobPosition').value = btn.dataset.job || 'Registrar / CEO';
-        document.getElementById('jobModal').classList.add('active');
-      });
-    });
-    
-    document.getElementById('jobApplicationForm')?.addEventListener('submit', function(e){
-      e.preventDefault();
-      let name = document.getElementById('jobName').value;
-      let pos = document.getElementById('jobPosition').value;
-      let body = `Job application from ${name} for ${pos}.`;
-      window.location.href = `mailto:president@zivs.org.zm?cc=finance@zivs.org.zm&subject=Job%20Application%20${encodeURIComponent(pos)}&body=${encodeURIComponent(body)}`;
-      alert('✓ Application sent.');
-      document.getElementById('jobModal').classList.remove('active');
-    });
-
-    // Contact form
-    document.getElementById('contactForm')?.addEventListener('submit', function(e){
-      e.preventDefault();
-      let msg = document.getElementById('contactMsg').value;
-      window.location.href = `mailto:president@zivs.org.zm?cc=finance@zivs.org.zm&subject=Contact%20ZIVS&body=${encodeURIComponent(msg)}`;
-    });
-
-    // FAQ Accordion
     const faqData = [
       {q:"How do I register as a valuation surveyor?", a:"Submit qualifications, experience log, and fee."},
       {q:"How long does registration take?", a:"Up to 21 working days."},
@@ -1687,59 +1592,25 @@
       {q:"How are complaints handled?", a:"Ethics committee reviews within 30 days."},
       {q:"Can foreign firms apply?", a:"Yes, through a local partner."},
       {q:"What fees are required?", a:"See fee schedule on downloads page."},
-      {q:"How do I apply for jobs?", a:"Use employment section or email president."},
       {q:"Where are ZIVS offices?", a:"Provident House, Cairo Road, Lusaka."},
       {q:"What does Act No. 9 cover?", a:"Establishment, regulation, discipline of ZIVS."},
       {q:"Do I need a TPIN?", a:"Yes for corporate, recommended for individual."},
-      {q:"CPD requirement?", a:"20 hours annually."},
+      {q:"CPD requirement?", a:"8 hours annually."},
       {q:"Student memberships?", a:"Yes, for enrolled students."},
       {q:"Verify a licensed valuer?", a:"Contact ZIVS for register search."},
       {q:"Firm inspections?", a:"Regular compliance audits."}
     ];
-    
-    let accHTML = '';
-    faqData.forEach((item) => {
-      accHTML += `<div class="accordion-item">
-        <div class="accordion-title"><span>${item.q}</span> <i class="fas fa-chevron-down" style="color: var(--gold);"></i></div>
-        <div class="accordion-content"><p>${item.a}</p></div>
-      </div>`;
-    });
+    let accHTML = ''; faqData.forEach(item => accHTML += `<div class="accordion-item"><div class="accordion-title"><span>${item.q}</span> <i class="fas fa-chevron-down" style="color: var(--gold);"></i></div><div class="accordion-content"><p>${item.a}</p></div></div>`);
     document.getElementById('accordionContainer').innerHTML = accHTML;
-    
-    document.querySelectorAll('.accordion-title').forEach(title => {
-      title.addEventListener('click', function() {
-        let content = this.nextElementSibling;
-        content.classList.toggle('show');
-        this.querySelector('i')?.classList.toggle('fa-chevron-up');
-      });
-    });
+    document.querySelectorAll('.accordion-title').forEach(title => title.addEventListener('click', function() { let content = this.nextElementSibling; content.classList.toggle('show'); this.querySelector('i')?.classList.toggle('fa-chevron-up'); }));
 
-    // Close modals on outside click
-    window.addEventListener('click', (e) => {
-      if (e.target === document.getElementById('corpModal')) {
-        document.getElementById('corpModal').classList.remove('active');
-      }
-      if (e.target === document.getElementById('individualModal')) {
-        document.getElementById('individualModal').classList.remove('active');
-      }
-      if (e.target === document.getElementById('jobModal')) {
-        document.getElementById('jobModal').classList.remove('active');
-      }
-    });
+    window.addEventListener('click', (e) => { if (e.target === document.getElementById('corpModal')) document.getElementById('corpModal').classList.remove('active'); if (e.target === document.getElementById('individualModal')) document.getElementById('individualModal').classList.remove('active'); });
 
-    // Mobile dropdown toggle
     if (window.innerWidth < 860) {
-      document.querySelectorAll('.nav-links > li > a').forEach(link => {
-        link.addEventListener('click', function(e) {
-          if (this.nextElementSibling?.classList.contains('dropdown-menu')) {
-            e.preventDefault();
-            this.parentElement.classList.toggle('dropdown-open');
-          }
-        });
-      });
+      document.querySelectorAll('.nav-links > li > a').forEach(link => link.addEventListener('click', function(e) { if (this.nextElementSibling?.classList.contains('dropdown-menu')) { e.preventDefault(); this.parentElement.classList.toggle('dropdown-open'); } }));
     }
 
-    console.log('ZIVS website fully loaded with enhanced navigation and gallery');
-  </script>
+</script>
+  
 </body>
-  </html>
+                   </html>
